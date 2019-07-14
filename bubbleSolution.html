@@ -41,6 +41,19 @@ for (var i = 0; i < scores.length; i++){
 console.log("Bubbles test: " + scores.length);
 console.log("Highest bubble score: " + highestScore);
     
+    
+//     BEST BUBBLE SOLUTION //
+
+var bestSolutions = [];
+for (var i = 0; i < scores.length; i++){
+  
+  if (scores[i] == highestScore){
+    bestSolutions.push(i);
+  }
+}
+console.log("Solutions with the highest score: " + bestSolutions);
+
+    
 </script>
 </body>
 </html>
