@@ -24,35 +24,76 @@
 //         i = i + 1;
 //     }
     
-//  FOR LOOP //
+// //  FOR LOOP //
 
-var highestScore = 0;
-var output;
+// var highestScore = 0;
+// var output;
 
-for (var i = 0; i < scores.length; i++){
-  output = "Bubble solution #" + i + "score: " + scores[i];
-  console.log(output); 
+// for (var i = 0; i < scores.length; i++){
+//   output = "Bubble solution #" + i + "score: " + scores[i];
+//   console.log(output); 
   
-  if (scores[i] > highestScore) {
-    highestScore = scores[i];
+//   if (scores[i] > highestScore) {
+//     highestScore = scores[i];
+//   }
+// }
+
+// console.log("Bubbles test: " + scores.length);
+// console.log("Highest bubble score: " + highestScore);
+    
+    
+// //     BEST BUBBLE SOLUTION //
+
+// var bestSolutions = [];
+// for (var i = 0; i < scores.length; i++){
+  
+//   if (scores[i] == highestScore){
+//     bestSolutions.push(i);
+//   }
+// }
+// console.log("Solutions with the highest score: " + bestSolutions);
+
+    
+    
+// PRINT SCORES AND HIGH SCORE (REFACTORING)
+// Here we refactor by incorporating a function
+
+function printAndGetHighScore(scores) {
+  var output;
+  var highestScore = 0;
+
+  for (i = 0; i < scores.length; i++){
+    output = ("Bubble solution #" + i + " scores: " + scores[i]);
+    console.log(output);
+    if (scores[i] > highestScore){
+      highestScore = scores[i];
+    }
   }
+  return highestScore;
 }
 
-console.log("Bubbles test: " + scores.length);
-console.log("Highest bubble score: " + highestScore);
-    
-    
-//     BEST BUBBLE SOLUTION //
+var vhighScore = printAndGetHighScore(scores);
+console.log("Bubble tests: " + scores.length);
+console.log("Highest bubble score: " + vhighScore);
 
+
+
+// GET BEST RESULTS (REFACTORING) 
+// Here we refactor by incorporating a function
+
+function getBestResults(scores, highestScore) {
 var bestSolutions = [];
-for (var i = 0; i < scores.length; i++){
-  
-  if (scores[i] == highestScore){
-    bestSolutions.push(i);
-  }
-}
-console.log("Solutions with the highest score: " + bestSolutions);
 
+  for (var i = 0; i < scores.length; i++) {
+    if (scores[i] == highestScore){
+      bestSolutions.push(i);
+    }
+  }
+  return bestSolutions; 
+}
+
+var vBestSolution = getBestResults(scores, vhighScore);
+console.log("Solutions with highest score: " + vBestSolution);
     
 </script>
 </body>
